@@ -4,9 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
+/* 基础样式 */
 import './assets/style/base.css'
 /* 避免移动端1px边框问题 */
-import './assets/style/border.css'
+import 'style/border.css'
+/* iconfont图标 */
+import '@/assets/style/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
