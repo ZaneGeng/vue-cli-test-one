@@ -3,8 +3,8 @@
   <div class="swipper">
     <swiper :options="swiperOption">
       <!-- slides -->
-      <swiper-slide><img class="swiper-img" src="http://c.zg101.com/zanePortal/static/images/banner/photo1.jpg" /></swiper-slide>
-      <swiper-slide><img class="swiper-img" src="http://c.zg101.com/zanePortal/static/images/banner/photo2.jpg" /></swiper-slide>
+      <swiper-slide><img class="swiper-img" src="@/assets/images/photo1.jpg" /></swiper-slide>
+      <swiper-slide><img class="swiper-img" src="@/assets/images/photo2.jpg" /></swiper-slide>
       <swiper-slide v-for="item of swiperList"  :key="item.id" >
           <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
