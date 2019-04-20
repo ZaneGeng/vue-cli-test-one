@@ -50,13 +50,13 @@ export default {
         content: '港澳连线热销产品，澳进港出',
         money: '￥57元 '
       }, {
-        id: 4,
+        id: 5,
         imgSrc: require('@/assets/images/p1.png'),
         title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
         content: '港澳连线热销产品，澳进港出',
         money: '￥57元 '
       }, {
-        id: 4,
+        id: 6,
         imgSrc: require('@/assets/images/p1.png'),
         title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
         content: '港澳连线热销产品，澳进港出',

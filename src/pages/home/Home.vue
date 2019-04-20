@@ -20,6 +20,8 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/weekend'
+import axios from 'axios'
+
 export default {
   name: 'Home',
   /* 使用局部组件 */
@@ -29,6 +31,22 @@ export default {
     HomeIcons,
     HomeSwiper,
     HomeHeader
+  },
+  methods: {
+    /* mounted触发这些方法 */
+    getHomeInfo: function () {
+      axios.get('/api/index.json')
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    }
+  },
+  /* vue实例生命周期，页面渲染输出后执行 */
+  mounted: function () {
+    this.getHomeInfo()
   }
 }
 </script>
