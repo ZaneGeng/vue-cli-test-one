@@ -1,3 +1,4 @@
+<!--icon图标导航vue单文件组件-->
 <template>
   <div class="icons">
     <swiper><!--使用了轮播vue-awesome-swiper插件，参考icons.vue-->
@@ -7,7 +8,7 @@
           <div class="icon-img-div">
             <img class="icon-img-self" src="@/assets/images/q10.png" />
           </div>
-          <p class="icon-p">城市景点1</p>
+          <p class="icon-p">城市景点11111市景</p>
         </div>
         <div class="icon">
           <div class="icon-img-div">
@@ -136,10 +137,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @import '~@/assets/style/selfCss.styl'
   .icons
     width: 100%
     height: 0
-    padding-bottom: 50%
+    padding-bottom: 40%
+    margin-top:.2rem
     /*background-color lightgray*/
     .icon
       position : relative
@@ -147,7 +150,7 @@ export default {
       float: left
       width: 25%
       height : 0
-      padding-bottom: 25%
+      padding-bottom: 20%
       /* background-color : red */
       .icon-img-div
         position : absolute
@@ -169,5 +172,7 @@ export default {
         height:.44rem
         line-height: .44rem
         text-align : center
-        /* background-color blueviolet */
+        /* 超过可显示长度用...代替，封装了css效果，调用selfCss.styl */
+        ellipsis()
+
 </style>

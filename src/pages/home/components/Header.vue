@@ -1,3 +1,4 @@
+<!--顶部搜索和城市选择-->
 <template>
   <div class="header">
     <div class="header-left">
@@ -22,7 +23,7 @@ export default {
 <!--lang使用stylus插件写css，scoped使本css只对本组件起作用，不会影响其他组件-->
 <style lang="stylus" scoped>
   /* css样式引入样式，需要用@import */
-  @import "~@/assets/style/varibles.styl"
+  @import "~@/assets/style/selfCss.styl"
   .header
     height : 0.86rem
     line-height: 0.86rem

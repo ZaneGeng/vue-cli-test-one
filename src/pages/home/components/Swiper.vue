@@ -1,3 +1,4 @@
+<!--轮播图vue单文件组件-->
 <template>
   <div class="swipper">
     <swiper :options="swiperOption">
@@ -24,7 +25,13 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
-        loop: true /* 循环播放 */
+        /* 循环翻页 */
+        loop: true,
+        /* 自动播放 */
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+        }
       },
       /* 循环显示图片 */
       swiperList: [{
