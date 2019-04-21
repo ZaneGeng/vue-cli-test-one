@@ -3,7 +3,7 @@
     <!--顶部-->
     <home-header></home-header>
     <!--轮播-->
-    <home-swiper></home-swiper>
+    <home-swiper :swiperList="swiperList"></home-swiper>
     <!--icon图标导航-->
     <home-icons></home-icons>
     <!--热门推荐-->
@@ -32,15 +32,25 @@ export default {
     HomeSwiper,
     HomeHeader
   },
+  data: function () {
+    return {
+      swiperList: []
+    }
+  },
   methods: {
     /* mounted触发这些方法 */
     getHomeInfo: function () {
       axios.get('/api/index.json')
-        .then(function (response) {
-          console.log(response)
+        .then((response) => {
+          let res = response.data
+          if (res.ret && res.data != null) {
+            /* 轮播数据，数组类型[] */
+            this.swiperList = res.data.swiperList
+            console.log(res.data.swiperList)
+          }
         })
         .catch(function (error) {
-          console.log(error)
+          console.error(error)
         })
     }
   },
