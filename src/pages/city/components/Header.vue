@@ -15,7 +15,12 @@
     <!--搜索结果显示-->
     <div class="search-arae" v-if="searchName != ''">
       <ul class="city-list">
-        <li class="city"  v-for="item of listSearchCity" :key="item.id">
+        <li
+          class="city"
+          v-for="item of listSearchCity"
+          :key="item.id"
+          @click="handleClickCity(item.name)"
+        >
           {{item.name}}
         </li>
       </ul>
@@ -33,6 +38,14 @@ export default {
   data () {
     return {
       searchName: ''
+    }
+  },
+  methods: {
+    /* 点击选中城市 */
+    handleClickCity (cityName) {
+      this.$store.commit('changeCity', cityName)
+      /* vue-router跳转 */
+      this.$router.push('/')
     }
   },
   computed: {

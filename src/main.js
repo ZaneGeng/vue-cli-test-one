@@ -13,6 +13,8 @@ import '@/assets/style/iconfont.css'
 /* 轮播插件vue-awesome-swiper */
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+/* vuex数据框架 */
+import store from './store'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)/* 避免移动端1px边框问题 */
@@ -22,6 +24,7 @@ Vue.use(VueAwesomeSwiper)/* 轮播插件vue-awesome-swiper */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

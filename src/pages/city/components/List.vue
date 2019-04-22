@@ -7,7 +7,7 @@
         </div>
         <div class="button-list">
           <div class="button-wrapper">
-            <p class="button" >北京</p>
+            <p class="button" >{{this.$store.state.cityName}}</p>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="button-list">
           <div class="button-wrapper" v-for="item of hotCityList" :key="item.id">
-            <p class="button" >{{item.name}}</p>
+            <p class="button"  @click="handleClickCity(item.name)">{{item.name}}</p>
           </div>
         </div>
       </div>
@@ -30,7 +30,12 @@
           {{key}}
         </div>
         <ul class="city-list">
-          <li class="city"  v-for="innerItem of item" :key="innerItem.id">
+          <li
+            class="city"
+            v-for="innerItem of item"
+            :key="innerItem.id"
+            @click="handleClickCity(innerItem.name)"
+          >
             {{innerItem.name}}
           </li>
         </ul>
@@ -50,9 +55,15 @@ export default {
     /* 点击右侧nav字母导航时传入 */
     navValue: String
   },
-  mounted: function () {
-    this.scroll = new BScroll(this.$refs.wrapper, {})
+  methods: {
+    /* 点击选中城市 */
+    handleClickCity (cityName) {
+      this.$store.commit('changeCity', cityName)
+      /* vue-router跳转 */
+      this.$router.push('/')
+    }
   },
+
   /* 监听navValue，变化后执行，也就是点击右侧nav字母时执行 */
   watch: {
     navValue () {
@@ -61,6 +72,10 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  /* 生命周期钩子 */
+  mounted: function () {
+    this.scroll = new BScroll(this.$refs.wrapper, {})
   }
 }
 </script>
