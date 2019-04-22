@@ -12,103 +12,30 @@
         </div>
       </div>
 
+      <!--热门城市-->
       <div class="arae">
         <div class="title">
           热门城市
         </div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <p class="button" >北京</p>
-          </div>
-          <div class="button-wrapper">
-            <p class="button" >北京</p>
-          </div>
-          <div class="button-wrapper">
-            <p class="button" >北京</p>
-          </div>
-          <div class="button-wrapper">
-            <p class="button" >北京</p>
+          <div class="button-wrapper" v-for="item of hotCityList" :key="item.id">
+            <p class="button" >{{item.name}}</p>
           </div>
         </div>
       </div>
 
       <!--城市名称-->
-      <div class="arae">
+      <div class="arae" v-for="(item , key) of cityList" :key="key" :ref="key">
         <div class="title">
-          A
+          {{key}}
         </div>
         <ul class="city-list">
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
+          <li class="city"  v-for="innerItem of item" :key="innerItem.id">
+            {{innerItem.name}}
           </li>
         </ul>
       </div>
-      <div class="arae">
-        <div class="title">
-          A
-        </div>
-        <ul class="city-list">
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-        </ul>
-      </div>
-      <div class="arae">
-        <div class="title">
-          A
-        </div>
-        <ul class="city-list">
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-        </ul>
-      </div>
-      <div class="arae">
-        <div class="title">
-          A
-        </div>
-        <ul class="city-list">
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-          <li class="city">
-            山东
-          </li>
-        </ul>
-      </div>
+
     </div>
   </div>
 </template>
@@ -117,8 +44,23 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    cityList: Object,
+    hotCityList: Array,
+    /* 点击右侧nav字母导航时传入 */
+    navValue: String
+  },
   mounted: function () {
     this.scroll = new BScroll(this.$refs.wrapper, {})
+  },
+  /* 监听navValue，变化后执行，也就是点击右侧nav字母时执行 */
+  watch: {
+    navValue () {
+      if (this.navValue) {
+        const element = this.$refs[this.navValue][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>

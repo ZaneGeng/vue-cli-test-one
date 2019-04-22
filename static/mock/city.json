@@ -10,6 +10,10 @@
 			"spell": "shanghai",
 			"name": "上海"
 		}, {
+      "id": 34,
+      "spell": "shanghai",
+      "name": "广东"
+    }, {
 			"id": 47,
 			"spell": "xian",
 			"name": "西安"
