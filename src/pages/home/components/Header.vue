@@ -9,7 +9,9 @@
       <span>输入城市/景点/游玩主题</span>
     </div>
     <div class="header-right">
-      城市
+      <router-link to="/city" class="router">
+        北京
+      </router-link>
       <span class="iconfont">&#xe62d;</span>
     </div>
   </div>
@@ -49,5 +51,6 @@ export default {
       padding: 0 .1rem
       float: right
       text-align: center
-      color: #fff
+      .router
+        color: #fff
 </style>
