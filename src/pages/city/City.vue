@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--顶部-->
-    <city-header></city-header>
+    <city-header :cityList="cityList"></city-header>
     <!--城市列表-->
     <city-list
       :cityList="cityList"

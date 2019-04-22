@@ -1,6 +1,11 @@
 <template>
   <ul class="list">
-    <li class="item" v-for="(item,key) of cityList" :key="key" @click="handleNavClick">
+    <li
+      class="item"
+      v-for="(item,key) of cityList"
+      :key="key"
+      @click="handleNavClick"
+    >
       {{key}}
     </li>
   </ul>
@@ -11,6 +16,12 @@ export default {
   name: 'CityNav',
   props: {
     cityList: Object
+  },
+  data () {
+    return {
+      /* 配合nav导航使用，作为一个标识 ，开始触摸时设置为true，停止后设置为false */
+      touchStatus: false
+    }
   },
   methods: {
     handleNavClick (e) {
