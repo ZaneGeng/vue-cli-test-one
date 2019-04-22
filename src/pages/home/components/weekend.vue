@@ -5,7 +5,7 @@
     <ul>
       <li class="weekend-li" v-for="item of weekendList" :key="item.id">
         <div class="li-img-wrapper">
-          <img  class="li-img"  :src="item.imgSrc" />
+          <img  class="li-img"  :src="item.imgUrl" />
         </div>
 
         <div class="li-info" >
@@ -20,39 +20,44 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    weekendList: Array
+  },
   data: function () {
     return {
-      weekendList: [{
-        id: 1,
-        imgSrc: require('@/assets/images/week.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出'
-      }, {
-        id: 2,
-        imgSrc: require('@/assets/images/week2.png'),
-        title: '香港+澳门5日4晚跟团游(4钻)',
-        content: '直飞香港/澳门五钻酒店/双米其林推荐餐/正宗葡餐'
-      }, {
-        id: 3,
-        imgSrc: require('@/assets/images/week.png'),
-        title: '香港+澳门5日4晚半自助游(4钻)',
-        content: '穿越港珠澳大桥，西九龙接站，黄大仙祠祈福，'
-      }, {
-        id: 4,
-        imgSrc: require('@/assets/images/week2.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出'
-      }, {
-        id: 5,
-        imgSrc: require('@/assets/images/week.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出'
-      }, {
-        id: 6,
-        imgSrc: require('@/assets/images/week2.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出'
-      }]
+      /*
+        weekendList: [{
+          id: 1,
+          imgUrl: require('@/assets/images/week.png'),
+          title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+          content: '港澳连线热销产品，澳进港出'
+        }, {
+          id: 2,
+          imgUrl: require('@/assets/images/week2.png'),
+          title: '香港+澳门5日4晚跟团游(4钻)',
+          content: '直飞香港/澳门五钻酒店/双米其林推荐餐/正宗葡餐'
+        }, {
+          id: 3,
+          imgUrl: require('@/assets/images/week.png'),
+          title: '香港+澳门5日4晚半自助游(4钻)',
+          content: '穿越港珠澳大桥，西九龙接站，黄大仙祠祈福，'
+        }, {
+          id: 4,
+          imgUrl: require('@/assets/images/week2.png'),
+          title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+          content: '港澳连线热销产品，澳进港出'
+        }, {
+          id: 5,
+          imgUrl: require('@/assets/images/week.png'),
+          title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+          content: '港澳连线热销产品，澳进港出'
+        }, {
+          id: 6,
+          imgUrl: require('@/assets/images/week2.png'),
+          title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+          content: '港澳连线热销产品，澳进港出'
+        }]
+      */
     }
   }
 }

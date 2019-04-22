@@ -3,13 +3,13 @@
     <!--顶部-->
     <home-header></home-header>
     <!--轮播-->
-    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-swiper :swiperList ="swiperList"></home-swiper>
     <!--icon图标导航-->
-    <home-icons></home-icons>
+    <home-icons :iconList ="iconList"></home-icons>
     <!--热门推荐-->
-    <home-recommend></home-recommend>
+    <home-recommend :recommendList="recommendList"></home-recommend>
     <!--周末推荐-->
-    <home-weekend></home-weekend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
 
   </div>
 </template>
@@ -34,11 +34,14 @@ export default {
   },
   data: function () {
     return {
-      swiperList: []
+      swiperList: [],
+      iconList: [],
+      recommendList: [],
+      weekendList: []
     }
   },
   methods: {
-    /* mounted触发这些方法 */
+    /* axios获取数据，由mounted触发这些方法 */
     getHomeInfo: function () {
       axios.get('/api/index.json')
         .then((response) => {
@@ -46,6 +49,12 @@ export default {
           if (res.ret && res.data != null) {
             /* 轮播数据，数组类型[] */
             this.swiperList = res.data.swiperList
+            /* icons导航数据，数组类型[] */
+            this.iconList = res.data.iconList
+            /* 热门推荐数据，数组类型[] */
+            this.recommendList = res.data.recommendList
+            /* 周末推荐数据，数组类型[] */
+            this.weekendList = res.data.weekendList
             console.log(res.data.swiperList)
           }
         })

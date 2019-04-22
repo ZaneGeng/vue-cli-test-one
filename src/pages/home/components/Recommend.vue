@@ -4,7 +4,7 @@
     <div class="recommend-title">热门推荐</div>
     <ul>
       <li class="recommend-li" v-for="item of recommendList" :key="item.id">
-          <img  class="li-img"  :src="item.imgSrc" />
+          <img  class="li-img"  :src="item.imgUrl" />
         <!--<div class="li-info">
           <p class="info-title">澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门 </p>
           <p class="info-content">港澳连线热销产品，澳进港出 </p>
@@ -23,45 +23,50 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommendList: Array
+  },
   data: function () {
     return {
-      recommendList: [{
-        id: 1,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出',
-        money: '￥57元 '
-      }, {
-        id: 2,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '香港+澳门5日4晚跟团游(4钻)',
-        content: '直飞香港/澳门五钻酒店/双米其林推荐餐/正宗葡餐',
-        money: '￥1157元 '
-      }, {
-        id: 3,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '香港+澳门5日4晚半自助游(4钻)',
-        content: '穿越港珠澳大桥，西九龙接站，黄大仙祠祈福，',
-        money: '￥321元 '
-      }, {
-        id: 4,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出',
-        money: '￥57元 '
-      }, {
-        id: 5,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出',
-        money: '￥57元 '
-      }, {
-        id: 6,
-        imgSrc: require('@/assets/images/p1.png'),
-        title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
-        content: '港澳连线热销产品，澳进港出',
-        money: '￥57元 '
-      }]
+      /*
+         recommendList: [{
+              id: 1,
+              imgUrl: require('@/assets/images/p1.png'),
+              title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+              content: '港澳连线热销产品，澳进港出',
+              money: '￥57元 '
+            }, {
+              id: 2,
+              imgUrl: require('@/assets/images/p1.png'),
+              title: '香港+澳门5日4晚跟团游(4钻)',
+              content: '直飞香港/澳门五钻酒店/双米其林推荐餐/正宗葡餐',
+              money: '￥1157元 '
+            }, {
+              id: 3,
+              imgUrl: require('@/assets/images/p1.png'),
+              title: '香港+澳门5日4晚半自助游(4钻)',
+              content: '穿越港珠澳大桥，西九龙接站，黄大仙祠祈福，',
+              money: '￥321元 '
+            }, {
+              id: 4,
+              imgSrc: require('@/assets/images/p1.png'),
+              title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+              content: '港澳连线热销产品，澳进港出',
+              money: '￥57元 '
+            }, {
+              id: 5,
+              imgUrl: require('@/assets/images/p1.png'),
+              title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+              content: '港澳连线热销产品，澳进港出',
+              money: '￥57元 '
+            }, {
+              id: 6,
+              imgUrl: require('@/assets/images/p1.png'),
+              title: '澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门',
+              content: '港澳连线热销产品，澳进港出',
+              money: '￥57元 '
+            }]
+      */
     }
   }
 }

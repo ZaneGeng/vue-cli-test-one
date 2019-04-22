@@ -36,13 +36,13 @@
         </div>
        </swiper-slide>
 
-      <!--方式2：（读取数据库方式，并自动判断换页）-->
+      <!--方式2：（axios读取json数据，并自动判断换页）-->
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.key">
           <div class="icon-img-div">
             <img class="icon-img-self" :src="item.imgUrl" />
           </div>
-          <p class="icon-p">{{item.name}}</p>
+          <p class="icon-p">{{item.content}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -52,49 +52,54 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconList: Array
+  },
   data: function () {
     return {
+    /*
       iconList: [{
-        imgUrl: require('@/assets/images/q10.png'),
-        key: '0001',
-        name: '北京城市'
-      }, {
-        imgUrl: require('@/assets/images/q11.png'),
-        key: '0002',
-        name: '山东城市'
-      }, {
-        imgUrl: require('@/assets/images/q10.png'),
-        key: '0003',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q11.png'),
-        key: '0004',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q10.png'),
-        key: '0005',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q11.png'),
-        key: '0006',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q10.png'),
-        key: '0007',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q11.png'),
-        key: '0008',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q10.png'),
-        key: '0009',
-        name: '云南城市'
-      }, {
-        imgUrl: require('@/assets/images/q11.png'),
-        key: '0010',
-        name: '云南城市'
-      }]
+          imgUrl: require('@/assets/images/q10.png'),
+          key: '0001',
+          content: '北京城市'
+        }, {
+          imgUrl: require('@/assets/images/q11.png'),
+          key: '0002',
+          content: '山东城市'
+        }, {
+          imgUrl: require('@/assets/images/q10.png'),
+          key: '0003',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q11.png'),
+          key: '0004',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q10.png'),
+          key: '0005',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q11.png'),
+          key: '0006',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q10.png'),
+          key: '0007',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q11.png'),
+          key: '0008',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q10.png'),
+          key: '0009',
+          content: '云南城市'
+        }, {
+          imgUrl: require('@/assets/images/q11.png'),
+          key: '0010',
+          content: '云南城市'
+        }]
+      */
     }
   },
   /* computed计算属性，有缓存效果，提升性能 */
