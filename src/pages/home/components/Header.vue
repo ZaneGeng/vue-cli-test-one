@@ -10,16 +10,23 @@
     </div>
     <div class="header-right">
       <router-link to="/city" class="router">
-        {{this.$store.state.cityName}}
+        {{this.cityName}}
+        <span class="iconfont">&#xe62d;</span>
       </router-link>
-      <span class="iconfont">&#xe62d;</span>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    ...mapState({
+      cityName: 'cityName'
+    })
+  }
 }
 </script>
 <!--lang使用stylus插件写css，scoped使本css只对本组件起作用，不会影响其他组件-->

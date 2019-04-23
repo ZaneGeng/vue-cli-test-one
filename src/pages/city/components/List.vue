@@ -47,6 +47,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -58,10 +59,15 @@ export default {
   methods: {
     /* 点击选中城市 */
     handleClickCity (cityName) {
-      this.$store.commit('changeCity', cityName)
+      /* vuex 的mutations操作，修改state仓库的值 */
+      /* this.$store.commit('changeCity', cityName) */
+      this.changeCity(cityName)
       /* vue-router跳转 */
       this.$router.push('/')
-    }
+    },
+    ...mapMutations({
+      changeCity: 'changeCity'
+    })
   },
 
   /* 监听navValue，变化后执行，也就是点击右侧nav字母时执行 */
