@@ -20,5 +20,8 @@ export default new Router({
       name: '城市详情',
       component: resolve => require(['@/pages/detail/Detail.vue'], resolve)
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

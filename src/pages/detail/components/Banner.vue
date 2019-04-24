@@ -14,11 +14,15 @@
     </div>
 
     <!--画廊轮播图-->
-    <common-gallary
-      :gallaryImgList="gallaryImgList"
-      v-show="gallaryShow"
-      @closeGallary="closeGallary"
-    ></common-gallary>
+    <fade-animation>
+      <!--作为插槽放入动画中，实现过渡效果-->
+      <common-gallary
+        :gallaryImgList="gallaryImgList"
+        v-show="gallaryShow"
+        @closeGallary="closeGallary"
+      ></common-gallary>
+    </fade-animation>
+
   </div>
 
 </template>
@@ -26,6 +30,7 @@
 <script>
 import CommonGallary from '../../common/gallary/Gallary'
 import axios from 'axios'
+import FadeAnimation from '../../common/fade/FadeAnimition'
 
 export default {
   name: 'DetailBanner',
@@ -38,6 +43,7 @@ export default {
     }
   },
   components: {
+    FadeAnimation,
     CommonGallary
   },
   methods: {

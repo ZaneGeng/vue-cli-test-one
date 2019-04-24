@@ -64,6 +64,7 @@ export default {
     display: flex /* 垂直居中 */
     flex-direction : column /* 垂直居中 */
     justify-content : center /* 垂直居中 */
+    z-index: 99
     .wrapper
       background-color : white
       .swiper-pagination-fraction

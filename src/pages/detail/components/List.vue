@@ -10,7 +10,7 @@
         {{item.title}}
       </div>
       <div v-if="item.children" class="item-chilren">
-        <detail-list :categoryList="item.children"></detail-list>
+        <detail-list :categoryList="item.children">1111</detail-list>
       </div>
     </div>
   </div>
