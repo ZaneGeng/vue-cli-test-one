@@ -15,6 +15,10 @@ export default new Router({
       path: '/city',
       name: '城市列表',
       component: City
+    }, {
+      path: '/detail/:id',
+      name: '城市详情',
+      component: resolve => require(['@/pages/detail/Detail.vue'], resolve)
     }
   ]
 })

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <keep-alive>
+   <!-- <keep-alive> 页面缓存-->
       <!--显示当前路由地址所对应的内容-->
       <router-view/>
-    </keep-alive>
+    <!--</keep-alive>-->
   </div>
 </template>
 

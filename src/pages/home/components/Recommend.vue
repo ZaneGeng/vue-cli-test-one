@@ -3,19 +3,20 @@
   <div>
     <div class="recommend-title">热门推荐</div>
     <ul>
-      <li class="recommend-li" v-for="item of recommendList" :key="item.id">
-          <img  class="li-img"  :src="item.imgUrl" />
-        <!--<div class="li-info">
-          <p class="info-title">澳门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门门+香港5日自由行·1晚澳门 </p>
-          <p class="info-content">港澳连线热销产品，澳进港出 </p>
-          <p class="info-money">￥57元 </p>
-        </div>-->
+      <router-link
+        tag="li"
+        class="recommend-li"
+        v-for="item of recommendList"
+        :key="item.id"
+        :to ="'/detail/' + item.id"
+      >
+        <img  class="li-img"  :src="item.imgUrl" />
         <div class="li-info" >
           <p class="info-title">{{item.title}}</p>
           <p class="info-content">{{item.content}}</p>
           <p class="info-money">{{item.money}}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

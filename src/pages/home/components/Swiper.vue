@@ -33,6 +33,11 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         }
+        /*
+          循环自我刷新次，避免点击显示后出现轮播显示错误
+          observeParents: true,
+          observer: true
+        */
       }
     }
   }
