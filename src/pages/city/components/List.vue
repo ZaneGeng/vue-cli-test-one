@@ -18,7 +18,11 @@
           热门城市
         </div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hotCityList" :key="item.id">
+          <div
+            class="button-wrapper"
+            v-for="item of hotCityList"
+            :key="item.id"
+          >
             <p class="button"  @click="handleClickCity(item.name)">{{item.name}}</p>
           </div>
         </div>
@@ -81,7 +85,7 @@ export default {
   },
   /* 生命周期钩子 */
   mounted: function () {
-    /* 初始化better-scroll插件 */
+    /* 初始化better-scroll滚动页面插件 */
     this.scroll = new BScroll(this.$refs.wrapper, {})
   }
 }

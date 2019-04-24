@@ -10,7 +10,9 @@
       <span class="iconfont">&#xe624;</span>
     </router-link>
     <!--返回横幅-->
-    <div
+    <router-link
+      tag="div"
+      to="/"
       class="header"
       v-if="!isShow"
       :style="opacityStyle"
@@ -19,7 +21,7 @@
         <span class="iconfont">&#xe624;</span>
       </div>
       <p class="header-title">景点详情</p>
-    </div>
+    </router-link>
     <p >{{top}}</p>
   </div>
 </template>
@@ -60,6 +62,9 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
 }
