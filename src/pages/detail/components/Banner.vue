@@ -88,8 +88,8 @@ export default {
       bottom: 0
       left: 0
       right: 0
-      height: .4rem
-      line-height : .4rem
+      height: .6rem
+      line-height : .6rem
       background: rgba(0, 0, 0, .5)
       color: white
       .info-title

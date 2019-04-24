@@ -60,7 +60,7 @@ export default {
     bottom: 0
     left: 0
     right: 0
-    background-color : red
+    background-color : black
     display: flex /* 垂直居中 */
     flex-direction : column /* 垂直居中 */
     justify-content : center /* 垂直居中 */
