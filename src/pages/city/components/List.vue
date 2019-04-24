@@ -47,7 +47,7 @@
 
 <script>
 import BScroll from 'better-scroll'
-import { mapState, mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -81,6 +81,7 @@ export default {
   },
   /* 生命周期钩子 */
   mounted: function () {
+    /* 初始化better-scroll插件 */
     this.scroll = new BScroll(this.$refs.wrapper, {})
   }
 }

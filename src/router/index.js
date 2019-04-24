@@ -9,11 +9,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: '首页',
       component: Home
     }, {
       path: '/city',
-      name: 'City',
+      name: '城市列表',
       component: City
     }
   ]
