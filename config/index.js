@@ -13,6 +13,7 @@ module.exports = {
     proxyTable: {
       '/api': {
         target: 'http://192.168.3.3:8080/static/mock',
+        /*target: 'http://192.168.3.3:5200',*/
         changeOrigin:true, //是否跨域
         pathRewrite: {
           '^/api': ''
@@ -59,7 +60,6 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-
     /**
      * Source Maps
      */

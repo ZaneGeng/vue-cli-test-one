@@ -15,6 +15,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 /* vuex数据框架 */
 import store from './store'
+/* 防止低版本安卓设备白屏插件 */
+import 'babel-polyfill'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)/* 避免移动端1px边框问题 */

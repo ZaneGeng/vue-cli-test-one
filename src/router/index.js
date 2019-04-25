@@ -1,24 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home.vue'
-import City from '@/pages/city/City.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: '首页',
-      component: Home
+      component: () => import('@/pages/home/Home.vue')
     }, {
       path: '/city',
       name: '城市列表',
-      component: City
+      component: () => import('@/pages/city/City.vue')
     }, {
       path: '/detail/:id',
       name: '城市详情',
-      component: resolve => require(['@/pages/detail/Detail.vue'], resolve)
+      component: () => import('@/pages/detail/Detail.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
