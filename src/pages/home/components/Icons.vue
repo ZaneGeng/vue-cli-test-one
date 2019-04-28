@@ -1,7 +1,7 @@
 <!--icon图标导航vue单文件组件-->
 <template>
   <div class="icons">
-    <swiper><!--使用了轮播vue-awesome-swiper插件，参考icons.vue-->
+    <swiper :options="swiperOption" v-if="pages.length>0"><!--使用了轮播vue-awesome-swiper插件，参考icons.vue-->
       <!--方式1:（写死方式）-->
       <swiper-slide>
         <div class="icon">
